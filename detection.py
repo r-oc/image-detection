@@ -4,6 +4,7 @@ import PIL
 from PIL import Image
 
 st.title("Welcome to r-oc's object detection!")
+st.write("Take a photo of something, and what it detect. Trained using YOLOv8 NANO model.")
 
 picture_taken = st.camera_input("Take a pic")
 if picture_taken:
