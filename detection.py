@@ -1,11 +1,21 @@
 from ultralytics import YOLO
 import streamlit as st
+import PIL
+from PIL import Image
 
-picture = st.camera_input("Take a pic")
+st.write('heleo world')
 
-model = YOLO("yolov8n.pt")
+picture_taken = st.camera_input("Take a pic")
+if picture_taken:
+    uploaded_image = PIL.Image.open(picture_taken)
 
-results = model(source=picture, show=True)
+    with st.spinner("Detecting images..."):
+        model = YOLO("yolov8n.pt")
+        res = model.predict(uploaded_image)
 
-if results:
-    st.image(results)
+        boxes = res[0].boxes
+        res_plotted = res[0].plot()[:, :, ::-1]
+        st.image(res_plotted,
+                 caption='Detected Image',
+                 use_column_width=True
+                 )
