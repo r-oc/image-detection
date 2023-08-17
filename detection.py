@@ -19,3 +19,4 @@ if picture_taken:
                  caption='Detected Image',
                  use_column_width=True
                  )
+
