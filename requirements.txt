@@ -4,4 +4,6 @@ streamlit
 numpy
 pandas
 opencv-python-headless
-libgl1
+opencv-python
+cv2
+opencv-contrib-python
