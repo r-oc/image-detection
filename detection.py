@@ -2,9 +2,8 @@ from ultralytics import YOLO
 import streamlit as st
 import PIL
 from PIL import Image
-import cv2
 
-st.write('hello tttt world')
+st.title("Welcome to r-oc's object detection!")
 
 picture_taken = st.camera_input("Take a pic")
 if picture_taken:
