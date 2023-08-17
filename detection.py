@@ -2,8 +2,9 @@ from ultralytics import YOLO
 import streamlit as st
 import PIL
 from PIL import Image
+import cv2
 
-st.write('heleo world')
+st.write('hello tttt world')
 
 picture_taken = st.camera_input("Take a pic")
 if picture_taken:
